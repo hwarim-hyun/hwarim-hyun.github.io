@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const albums = await getCollection('albums');
+  return albums.map((a) => ({ params: { id: a.id }, props: { album: a } }));
+}
+const { album } = Astro.props;
+const { Content } = await render(album);
+const d = album.data;
+---
+<Base title={d.title} description={d.summary ?? d.title}>
+  <article>
+    <header class="article-head">
+      <p class="small"><a href="/#outside">← Outside of Work</a></p>
+      <h1>{d.title}</h1>
+      {d.summary && <p class="muted">{d.summary}</p>}
+    </header>
+    <div class="prose"><Content /></div>
+    {d.photos.length > 0 && (
+      <div class="photo-grid">
+        {d.photos.map((p) => (
+          <figure>
+            <img src={p.src} alt={p.caption ?? d.title} loading="lazy" />
+            {p.caption && <figcaption>{p.caption}</figcaption>}
+          </figure>
+        ))}
+      </div>
+    )}
+  </article>
+</Base>

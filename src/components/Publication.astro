@@ -1,0 +1,47 @@
+---
+import { SITE } from '../site.config';
+export interface Pub {
+  title: string;
+  authors: string[];
+  venue: string;
+  year: number;
+  type?: string;
+  selected?: boolean;
+  award?: string;
+  abstract?: string;
+  links?: Partial<Record<'pdf' | 'code' | 'project' | 'arxiv' | 'doi' | 'slides' | 'poster' | 'video', string>>;
+}
+interface Props { pub: Pub; compact?: boolean }
+const { pub, compact = false } = Astro.props;
+const me = [SITE.name, SITE.nameKo].filter(Boolean);
+const isMe = (a: string) => me.some((m) => a.trim().toLowerCase() === m.toLowerCase());
+const linkOrder = ['pdf', 'arxiv', 'doi', 'code', 'project', 'slides', 'poster', 'video'] as const;
+const labels: Record<string, string> = { pdf: 'PDF', arxiv: 'arXiv', doi: 'DOI', code: 'Code', project: 'Project', slides: 'Slides', poster: 'Poster', video: 'Video' };
+---
+<li class="pub">
+  <p class="title">{pub.title}</p>
+  <p class="authors">
+    {pub.authors.map((a, i) => (
+      <>
+        <span class:list={{ me: isMe(a) }}>{a}</span>{i < pub.authors.length - 1 ? ', ' : ''}
+      </>
+    ))}
+  </p>
+  <p class="venue">
+    {pub.venue} {pub.year}
+    {pub.award && <span> · <span class="award">{pub.award}</span></span>}
+  </p>
+  {pub.links && (
+    <div class="actions">
+      {linkOrder.filter((k) => pub.links?.[k]).map((k) => (
+        <a class="pill" href={pub.links![k]} rel="noopener">{labels[k]}</a>
+      ))}
+    </div>
+  )}
+  {pub.abstract && !compact && (
+    <details>
+      <summary>Abstract</summary>
+      <p>{pub.abstract}</p>
+    </details>
+  )}
+</li>

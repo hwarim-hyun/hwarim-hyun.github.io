@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import Publication from '../components/Publication.astro';
+import type { Pub } from '../components/Publication.astro';
+import publications from '../data/publications.json';
+
+const pubs = (publications as Pub[]).slice().sort((a, b) => b.year - a.year);
+const years = [...new Set(pubs.map((p) => p.year))];
+---
+<Base title="Publications" description="Publications and preprints.">
+  <h1>Publications</h1>
+  <p class="muted">Conference and journal papers, workshop papers, and preprints. See also <a href="/cv">CV</a>.</p>
+  {years.map((y) => (
+    <>
+      <p class="year-head">{y}</p>
+      <ul class="pub-list">
+        {pubs.filter((p) => p.year === y).map((p) => <Publication pub={p} />)}
+      </ul>
+    </>
+  ))}
+</Base>

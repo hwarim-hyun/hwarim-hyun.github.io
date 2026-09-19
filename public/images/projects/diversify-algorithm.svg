@@ -1,0 +1,115 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1360 640' width='1360' height='640' font-family='ui-sans-serif,-apple-system,Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif'>
+<rect width='1360' height='640' fill='#ffffff'/>
+<text x='40' y='44' font-size='20' font-weight='600' fill='#1c1c1a' text-anchor='start'>Example: N = 10 results, at most M = 4 per group, K = 3 groups</text>
+<rect x='40' y='80' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='63.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>0</text>
+<rect x='86' y='80' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='109.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>1</text>
+<rect x='132' y='80' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='155.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>2</text>
+<rect x='178' y='80' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='201.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>3</text>
+<rect x='224' y='80' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='247.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>4</text>
+<rect x='270' y='80' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='293.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>5</text>
+<rect x='316' y='80' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='339.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>6</text>
+<rect x='362' y='80' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='385.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>7</text>
+<rect x='408' y='80' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='431.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>8</text>
+<rect x='454' y='80' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='477.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>9</text>
+<text x='40' y='158' font-size='16' font-weight='normal' fill='#5f5e5a' text-anchor='start'>Each cell is an index into a separately stored row (id + columns); color = group (e.g. brand)</text>
+<rect x='640' y='84' width='18' height='18' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='1.5'/>
+<text x='666' y='99' font-size='16' font-weight='normal' fill='#5f5e5a' text-anchor='start'>Group 1</text>
+<rect x='750' y='84' width='18' height='18' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='1.5'/>
+<text x='776' y='99' font-size='16' font-weight='normal' fill='#5f5e5a' text-anchor='start'>Group 2</text>
+<rect x='860' y='84' width='18' height='18' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='1.5'/>
+<text x='886' y='99' font-size='16' font-weight='normal' fill='#5f5e5a' text-anchor='start'>Group 3</text>
+<text x='40' y='222' font-size='24' font-weight='700' fill='#1c1c1a' text-anchor='start'>AS-IS</text>
+<text x='166' y='222' font-size='16' font-weight='normal' fill='#5f5e5a' text-anchor='start'>per-group heaps</text>
+<text x='150' y='269.0' font-size='19' font-weight='normal' fill='#b5651d' text-anchor='end'>Group 1</text>
+<rect x='166' y='240' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='189.0' y='270.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>3</text>
+<rect x='212' y='240' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='235.0' y='270.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>0</text>
+<rect x='258' y='240' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='281.0' y='270.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>8</text>
+<text x='150' y='333.0' font-size='19' font-weight='normal' fill='#4f8a3c' text-anchor='end'>Group 2</text>
+<rect x='166' y='304' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='189.0' y='334.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>1</text>
+<rect x='212' y='304' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='235.0' y='334.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>7</text>
+<rect x='258' y='304' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='281.0' y='334.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>6</text>
+<text x='150' y='397.0' font-size='19' font-weight='normal' fill='#5f5e5a' text-anchor='end'>Group 3</text>
+<rect x='166' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='189.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>5</text>
+<rect x='212' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='235.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>4</text>
+<rect x='258' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='281.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>9</text>
+<rect x='304' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='327.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>2</text>
+<text x='150' y='467.0' font-size='19' font-weight='600' fill='#1c1c1a' text-anchor='end'>top-N</text>
+<rect x='166' y='438' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='189.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>5</text>
+<rect x='212' y='438' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='235.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>3</text>
+<rect x='258' y='438' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='281.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>1</text>
+<rect x='304' y='438' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='327.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>0</text>
+<rect x='350' y='438' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='373.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>4</text>
+<rect x='396' y='438' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='419.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>7</text>
+<rect x='442' y='438' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='465.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>9</text>
+<rect x='488' y='438' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='511.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>6</text>
+<rect x='534' y='438' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='557.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>8</text>
+<rect x='580' y='438' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='603.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>2</text>
+<text x='166' y='514' font-size='16' font-weight='normal' fill='#b23b3b' text-anchor='start'>full top-N list of every candidate → space grows with N</text>
+<text x='770' y='222' font-size='24' font-weight='700' fill='#1c1c1a' text-anchor='start'>TO-BE</text>
+<text x='896' y='222' font-size='16' font-weight='normal' fill='#5f5e5a' text-anchor='start'>per-group heaps</text>
+<text x='880' y='269.0' font-size='19' font-weight='normal' fill='#b5651d' text-anchor='end'>Group 1</text>
+<rect x='896' y='240' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='919.0' y='270.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>3</text>
+<rect x='942' y='240' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='965.0' y='270.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>0</text>
+<rect x='988' y='240' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='1011.0' y='270.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>8</text>
+<text x='880' y='333.0' font-size='19' font-weight='normal' fill='#4f8a3c' text-anchor='end'>Group 2</text>
+<rect x='896' y='304' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='919.0' y='334.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>1</text>
+<rect x='942' y='304' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='965.0' y='334.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>7</text>
+<rect x='988' y='304' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='1011.0' y='334.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>6</text>
+<text x='880' y='397.0' font-size='19' font-weight='normal' fill='#5f5e5a' text-anchor='end'>Group 3</text>
+<rect x='896' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='919.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>5</text>
+<rect x='942' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='965.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>4</text>
+<rect x='988' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='1011.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>9</text>
+<rect x='1034' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='1057.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>2</text>
+<text x='880' y='467.0' font-size='19' font-weight='600' fill='#1c1c1a' text-anchor='end'>minimum</text>
+<rect x='896' y='438' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='919.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>5</text>
+<rect x='942' y='438' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='965.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>3</text>
+<rect x='988' y='438' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='1011.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>1</text>
+<text x='896' y='514' font-size='16' font-weight='normal' fill='#2f7a3a' text-anchor='start'>one heap of each group's minimum → space grows with K</text>
+<text x='896' y='538' font-size='16' font-weight='normal' fill='#5f5e5a' text-anchor='start'>(K = number of groups, K ≪ N)</text>
+<line x1='665' y1='380' x2='725' y2='380' stroke='#8a8a8a' stroke-width='3' marker-end='url(#a)'/>
+<defs><marker id='a' markerWidth='10' markerHeight='10' refX='8' refY='5' orient='auto'><path d='M0,0 L10,5 L0,10 z' fill='#8a8a8a'/></marker></defs>
+<text x='680.0' y='610' font-size='24' font-weight='700' fill='#1c1c1a' text-anchor='middle'>Space complexity: O(N) → O(K)</text>
+</svg>

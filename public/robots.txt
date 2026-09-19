@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hwarim-hyun.github.io/sitemap-index.xml

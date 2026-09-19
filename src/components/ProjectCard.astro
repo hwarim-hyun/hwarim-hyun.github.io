@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { project: CollectionEntry<'projects'>; size?: 'default' | 'large' }
+const { project, size = 'default' } = Astro.props;
+const d = project.data;
+const href = `/projects/${project.id}`;
+---
+{/* 6개 섹션을 항상 같은 순서로 렌더해서, 그리드의 subgrid 로 이웃 카드와 섹션 높이를 맞춘다 */}
+<article class:list={['card', 'project-card', { large: size === 'large' }]}>
+  <p class="card-context">
+    {d.org}{d.org && d.period && <span class="faint"> · </span>}{d.period && <span class="faint">{d.period}</span>}
+  </p>
+  <h3><a href={href}>{d.title}</a></h3>
+  <p class="card-summary">{d.summary}</p>
+  <dl class="metrics">
+    {d.metrics.map((m) => (
+      <div><dt>{m.label}</dt><dd>{m.value}</dd></div>
+    ))}
+  </dl>
+  <div class="meta">{d.tags.map((t) => <span class="pill">{t}</span>)}</div>
+  <p class="card-more"><a href={href}>Read more →</a></p>
+</article>

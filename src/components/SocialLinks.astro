@@ -1,0 +1,14 @@
+---
+import { SITE } from '../site.config';
+import Icon from './Icon.astro';
+const L = SITE.links;
+---
+<ul class="links">
+  {SITE.email && <li><a href={`mailto:${SITE.email}`}><Icon name="mail" />{SITE.email}</a></li>}
+  {L.github && <li><a href={L.github} rel="me noopener"><Icon name="github" />GitHub</a></li>}
+  {L.scholar && <li><a href={L.scholar} rel="me noopener"><Icon name="scholar" />Scholar</a></li>}
+  {L.linkedin && <li><a href={L.linkedin} rel="me noopener"><Icon name="linkedin" />LinkedIn</a></li>}
+  {L.orcid && <li><a href={L.orcid} rel="me noopener"><Icon name="orcid" />ORCID</a></li>}
+  {L.twitter && <li><a href={L.twitter} rel="me noopener"><Icon name="twitter" />X</a></li>}
+  {L.cv && <li><a href={L.cv}><Icon name="cv" />CV (PDF)</a></li>}
+</ul>

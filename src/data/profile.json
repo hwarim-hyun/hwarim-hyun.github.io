@@ -1,0 +1,42 @@
+{
+  "name": "Hwarim Hyun",
+  "nameKo": "현화림",
+  "displayName": "Hwarim (Harley) Hyun",
+  "tagline": "AI Safety Evaluation Engineer at [NAVER](https://www.navercorp.com/en/main)",
+  "location": "Seoul, Korea",
+  "email": "hwarim.harley.hyun@gmail.com",
+  "avatar": "/avatar.jpg",
+  "intro": [
+    "👋 **Hi! I'm Harley**, a systems-minded AI Safety Evaluation Engineer with five years of experience measuring how well large systems actually work, from a 50-billion-vector search index to every safety evaluation framework at NAVER.",
+    "📊 I make safety evaluations precise and reliable enough that product teams treat them as part of building, not a gate to clear at the end.",
+    "I'm after safety users never feel and builders can act on; that's the impact I'm genuinely proud of.",
+    "✅ **Some of my best work experiences have been:**",
+    "🤖 Designing NAVER's standard AI evaluation process as the second founding member of the safety-dedicated team",
+    "📉 Building an internal automation platform and verification system that cut safety evaluation time by 80%, increased query volume 5×, and improved evaluation precision by 11.5%p",
+    "🖥️ Before safety, optimizing NAVER's search engine itself: cutting vector-search response time 50% across 10M+ searches a day and an index of 50B+ vectors",
+    "**Outside of work**, I love to sing 🎤🎵! I've been fronting bands for almost a decade, and this past year I've been running NAVER's band club (50 to 60 people, two public shows a year, and it's easily the best part of my calendar!).",
+    "📚 I also keep a small book club going at my office, nine of us at the moment. And I'm outnumbered at home by two adorable cats 🐈 🐈.",
+    "🤝 I'm always open to opportunities where I can build evaluation systems from scratch and make sure they hold up under scrutiny. Feel free to connect!"
+  ],
+  "introFold": 4,
+  "skills": [
+    "AI Safety",
+    "Automated AI Evaluation",
+    "Evaluation Infrastructure",
+    "Experiment Design",
+    "Red-teaming"
+  ],
+  "keywords": "AI Safety · AI Risk Evaluation · LLM Evaluation · Red-teaming · Evaluation Infrastructure · Model Evaluation · Adversarial Testing · Safety Benchmarks · LLM-as-a-Judge · Guardrail Testing",
+  "links": {
+    "github": "https://github.com/hwarim-hyun",
+    "linkedin": "https://www.linkedin.com/in/hwarim-hyun/",
+    "orcid": "https://orcid.org/0009-0009-7382-0898",
+    "scholar": "",
+    "twitter": "",
+    "cv": "/files/cv.pdf"
+  },
+  "seo": {
+    "title": "Hwarim (Harley) Hyun — AI Safety Evaluation Engineer",
+    "description": "Portfolio of Hwarim (Harley) Hyun, AI safety evaluation engineer at NAVER: evaluation infrastructure, red-teaming, and large-scale search systems."
+  }
+}

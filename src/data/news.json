@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2026-09-16",
+    "text": "NAVER published its first [AI Safety Progress Report](https://www.navercorp.com/media/aiInNaver/buildingAiDetail?seq=10034660), describing the evaluation framework and checks our team runs on live products.\nIn the press (English): [Asia Today](https://en.asiatoday.co.kr/view.php?key=20260916000947283) · [Maeil Business](https://www.mk.co.kr/en/it/12154170)"
+  },
+  {
+    "date": "2026-04-13T00:00:00.000Z",
+    "text": "Our paper on deceptive persuasion by LLMs was presented at **CHI 2026** in Barcelona."
+  },
+  {
+    "date": "2026-01-15T00:00:00.000Z",
+    "text": "Represented Korea at the **Singapore AI Safety Red Team Challenge** hosted by IMDA."
+  },
+  {
+    "date": "2025-05-01T00:00:00.000Z",
+    "text": "Joined the newly formed **NAVER AI Safety Center** as its second member."
+  },
+  {
+    "date": "2024-11-12",
+    "text": "Spoke at **DAN24**, NAVER's largest engineering conference, on bringing neural retrieval into the production search engine."
+  }
+]

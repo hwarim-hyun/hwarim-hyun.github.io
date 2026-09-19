@@ -1,0 +1,32 @@
+---
+import { SITE } from '../site.config';
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/">{SITE.name}</a>
+    <nav class="nav" aria-label="Main">
+      {SITE.nav.map((n) => (
+        <a href={n.href} aria-current={isActive(n.href) ? 'page' : undefined}>{n.label}</a>
+      ))}
+      <button class="theme-btn" id="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle theme">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+<script>
+  const btn = document.getElementById('theme-toggle');
+  btn?.addEventListener('click', () => {
+    const root = document.documentElement;
+    const current =
+      root.getAttribute('data-theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch {}
+  });
+</script>

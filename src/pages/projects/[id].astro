@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Icon from '../../components/Icon.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((p) => ({ params: { id: p.id }, props: { project: p } }));
+}
+const { project } = Astro.props;
+const { Content } = await render(project);
+const d = project.data;
+---
+<Base title={d.title} description={d.summary} type="article">
+  <article>
+    <header class="article-head">
+      <p class="small"><a href="/projects">← Projects</a></p>
+      <h1>{d.title}</h1>
+      <p class="meta">
+        {d.org && <span>{d.org}</span>}
+        {d.org && (d.period || d.role) && ' · '}
+        {d.role && <span>{d.role}</span>}
+        {d.role && d.period && ' · '}
+        {d.period ? <span>{d.period}</span> : !d.org && !d.role && <FormattedDate date={d.date} />}
+      </p>
+      {d.metrics.length > 0 && (
+        <dl class="metrics metrics-lg">
+          {d.metrics.map((m) => <div><dt>{m.label}</dt><dd>{m.value}</dd></div>)}
+        </dl>
+      )}
+      {d.tags.length > 0 && <div class="meta tags">{d.tags.map((t) => <span class="pill">{t}</span>)}</div>}
+      {d.links.length > 0 && (
+        <div class="link-buttons">
+          {d.links.map((l) => (
+            <a href={l.href} rel="noopener">
+              <Icon name={l.icon ?? 'external'} />
+              {l.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </header>
+    <div class="prose"><Content /></div>
+  </article>
+</Base>

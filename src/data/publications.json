@@ -1,0 +1,58 @@
+[
+  {
+    "title": "\"Can LLMs Persuade Humans with Deception?\": From a Deceptive Strategy Taxonomy to a Large-Scale Empirical Study",
+    "authors": [
+      "Haein Yeo",
+      "Seungwan Jin",
+      "Taehyung Noh",
+      "Yejin Shin",
+      "Sangyeon Kang",
+      "Sangwoo Heo",
+      "Jiwon Chung",
+      "Hwarim Hyun",
+      "Kyungsik Han"
+    ],
+    "venue": "ACM CHI",
+    "year": 2026,
+    "type": "conference",
+    "selected": true,
+    "links": {
+      "doi": "https://doi.org/10.1145/3772318.3791188"
+    },
+    "abstract": "Beyond hallucinations, Large Language Models (LLMs) can craft deceptive arguments that erode users' critical thinking, posing a significant yet underexamined societal risk. To address this gap, we develop a taxonomy of eight deceptive persuasion strategies by integrating top-down rhetorical theory with a bottom-up analysis of 3,360 AI-generated messages by four LLM families and examining their effects on user perceptions. Through a large-scale user study (N=602) complemented by a think-aloud protocol, we found that participants were vulnerable to Information Manipulation and Uncertainty Exploitation, especially when a message contradicted their prior beliefs. Vulnerability was significantly higher for participants with low cognitive reflection, low topic knowledge, and low topic involvement. Qualitative analyses further revealed that participants were persuaded by the plausibility of an overall narrative even when they distrusted specific details, interpreting deceptive outputs as logically framed information that broadens perspective. We discuss critical implications of these findings for the design of trustworthy AI systems, adaptive user interfaces, and targeted literacy education."
+  },
+  {
+    "title": "Refurbish Your Training Data: Reusing Partially Augmented Samples for Faster Deep Neural Network Training",
+    "authors": [
+      "Gyewon Lee",
+      "Irene Lee",
+      "Hyeonmin Ha",
+      "Kyunggeun Lee",
+      "Hwarim Hyun",
+      "Ahnjae Shin",
+      "Byung-Gon Chun"
+    ],
+    "venue": "USENIX ATC",
+    "year": 2021,
+    "type": "conference",
+    "selected": true,
+    "links": {
+      "pdf": "https://www.usenix.org/system/files/atc21-lee.pdf",
+      "slides": "https://www.usenix.org/system/files/atc21_slides_lee.pdf",
+      "project": "https://www.usenix.org/conference/atc21/presentation/lee"
+    },
+    "abstract": "Data augmentation is a widely adopted technique for improving the generalization of deep learning models, but it often suffers from heavy CPU overhead that degrades training speed. We propose data refurbishing, a sample reuse mechanism that splits augmentation into partial and final stages and reuses partially augmented samples to cut CPU computation while preserving sample diversity. We implement it in a new data loading system, Revamper, which keeps per-step CPU time constant to maximize CPU/accelerator overlap. Revamper accelerates training of computer vision models by 1.03x–2.04x with comparable accuracy.\n"
+  },
+  {
+    "title": "CarolTree: A Music Education Game for Children",
+    "authors": [
+      "Hwarim Hyun",
+      "et al."
+    ],
+    "venue": "Asian CHI Symposium, ACM CHI Workshop",
+    "year": 2019,
+    "type": "workshop",
+    "selected": false,
+    "abstract": "A music education game for children. Built the game and ran a qualitative user study with child participants. First author of six.\n"
+  }
+]
