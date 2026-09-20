@@ -12,7 +12,7 @@ metrics:
   - { value: "≥95%", label: "of ColBERT quality retained" }
 links:
   - { label: "Talk page (DAN24, Korean)", href: "https://dan.naver.com/24/sessions/587", icon: web }
-  - { label: "Recording (NAVER TV, Korean)", href: "https://tv.naver.com/v/67452264", icon: video }
+  - { label: "Video (NAVER TV, Korean)", href: "https://tv.naver.com/v/67452264", icon: video }
   # 영어 번역 슬라이드가 준비되면 주석 해제
   # - { label: "Slides (English)", href: "", icon: slides }
 featured: true

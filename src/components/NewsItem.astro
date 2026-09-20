@@ -1,0 +1,24 @@
+---
+import FormattedDate from './FormattedDate.astro';
+import Icon from './Icon.astro';
+import { marked } from 'marked';
+
+export interface NewsLink { label: string; href: string; icon?: 'web' | 'paper' | 'video' | 'slides' | 'code' | 'external' }
+export interface NewsEntry { date: Date; text: string; links?: NewsLink[] }
+interface Props { item: NewsEntry }
+const { item } = Astro.props;
+const html = marked.parseInline(item.text.replace(/\n/g, '<br>')) as string;
+---
+<li>
+  <FormattedDate date={item.date} />
+  <div>
+    <p set:html={html} />
+    {item.links && item.links.length > 0 && (
+      <div class="news-links">
+        {item.links.map((l) => (
+          <a href={l.href} rel="noopener"><Icon name={l.icon ?? 'external'} />{l.label}</a>
+        ))}
+      </div>
+    )}
+  </div>
+</li>

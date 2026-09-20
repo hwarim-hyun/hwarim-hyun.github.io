@@ -7,16 +7,17 @@ org: "NAVER · AI Safety Center"
 role: "AI Safety Evaluation Engineer, experiment design and implementation"
 tags: ["AI Safety", "LLM-as-a-judge", "Experiment Design", "Statistics", "Evaluation"]
 metrics:
-  - { value: "+11.5%p", label: "precision on harmful vs. previous judge" }
+  - { value: "+11.5%p", label: "precision on harmful" }
   - { value: "−91%", label: "false positives" }
   - { value: "+13.9%p", label: "agreement with human labels" }
 featured: true
+order: 2
 ---
 
 ## Summary
 
 **Problem**
-- *Background.* As the company's sole AI safety team, we automatically evaluate every NAVER AI agent before launch with a judge LLM. We had built our own risk taxonomy and, for each risk category, an evaluation criterion that labels a response harmful, grey, or safe.
+- *Background.* As the company's sole AI safety team, we automatically evaluate every NAVER AI agent before launch with a judge LLM, the grader behind our [safety evaluation platform](/projects/safety-evaluation-platform). We had built our own risk taxonomy and, for each risk category, an evaluation criterion that labels a response harmful, grey, or safe.
 - *Motivation.* Product teams experience **safety as a usability tax**. Every false positive costs them a manual review, so for safety evaluation to fit their product cycles, **precision on harmful had to be high**.
 - *Problem definition.* Before deploying the criteria, determine whether they are precise enough to be useful, and whether the new criteria, run on the same model, beat the single moderation prompt we used before.
 - *Why it's hard.* No labelled data existed, and harmful responses are rare in traffic. Human annotation was expensive, so the same limited budget had to serve both refining the criteria and verifying them.

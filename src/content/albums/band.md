@@ -1,10 +1,10 @@
 ---
 title: "Band"
 summary: "Fronting bands for almost a decade, and running NAVER's band club."
-cover: "/images/life/band-cover.svg"
+cover: "/images/life/band/cover.jpg"
 order: 1
 photos: []
-# photos 예시:
+# 사진은 _raw/photos/band/ 에 보관 중. 공개 결정 후 _raw/tools/photos.sh band 로 올리고 아래에 추가
 # photos:
 #   - { src: "/images/life/band/01.jpg", caption: "…" }
 ---

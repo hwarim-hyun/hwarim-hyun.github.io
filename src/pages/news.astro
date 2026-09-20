@@ -3,9 +3,11 @@ import Base from '../layouts/Base.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { marked } from 'marked';
 import news from '../data/news.json';
+import NewsItem from '../components/NewsItem.astro';
+import type { NewsLink } from '../components/NewsItem.astro';
 
 const inline = (t: string) => marked.parseInline(t.replace(/\n/g, '<br>')) as string;
-const items = (news as { date: string; text: string }[])
+const items = (news as { date: string; text: string; links?: NewsLink[] }[])
   .map((n) => ({ ...n, date: new Date(n.date) }))
   .sort((a, b) => b.date.getTime() - a.date.getTime());
 const years = [...new Set(items.map((n) => n.date.getUTCFullYear()))];
@@ -17,12 +19,7 @@ const years = [...new Set(items.map((n) => n.date.getUTCFullYear()))];
     <>
       <p class="year-head" id={String(y)}>{y}</p>
       <ul class="news">
-        {items.filter((n) => n.date.getUTCFullYear() === y).map((n) => (
-          <li>
-            <FormattedDate date={n.date} />
-            <p set:html={inline(n.text)} />
-          </li>
-        ))}
+        {items.filter((n) => n.date.getUTCFullYear() === y).map((n) => <NewsItem item={n} />)}
       </ul>
     </>
   ))}

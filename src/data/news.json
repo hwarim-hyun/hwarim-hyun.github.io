@@ -1,22 +1,75 @@
 [
   {
     "date": "2026-09-16",
-    "text": "NAVER published its first [AI Safety Progress Report](https://www.navercorp.com/media/aiInNaver/buildingAiDetail?seq=10034660), describing the evaluation framework and checks our team runs on live products.\nIn the press (English): [Asia Today](https://en.asiatoday.co.kr/view.php?key=20260916000947283) · [Maeil Business](https://www.mk.co.kr/en/it/12154170)"
+    "text": "Our team published NAVER's first **AI Safety Progress Report**, describing the evaluation framework and checks we run on live products.",
+    "links": [
+      {
+        "label": "Report",
+        "href": "https://www.navercorp.com/media/aiInNaver/buildingAiDetail?seq=10034660",
+        "icon": "paper"
+      },
+      {
+        "label": "Press (Asia Today)",
+        "href": "https://en.asiatoday.co.kr/view.php?key=20260916000947283",
+        "icon": "web"
+      },
+      {
+        "label": "Press (Maeil Business)",
+        "href": "https://www.mk.co.kr/en/it/12154170",
+        "icon": "web"
+      }
+    ]
   },
   {
-    "date": "2026-04-13T00:00:00.000Z",
-    "text": "Our paper on deceptive persuasion by LLMs was presented at **CHI 2026** in Barcelona."
+    "date": "2026-04-13",
+    "text": "A paper I co-authored on deceptive persuasion by LLMs was presented at **CHI 2026** in Barcelona.",
+    "links": [
+      {
+        "label": "DOI",
+        "href": "https://doi.org/10.1145/3772318.3791188",
+        "icon": "paper"
+      }
+    ]
   },
   {
-    "date": "2026-01-15T00:00:00.000Z",
-    "text": "Represented Korea at the **Singapore AI Safety Red Team Challenge** hosted by IMDA."
+    "date": "2026-01-15",
+    "text": "Represented Korea at the **Singapore AI Safety Red Team Challenge** hosted by IMDA.",
+    "links": [
+      {
+        "label": "IMDA",
+        "href": "https://www.imda.gov.sg",
+        "icon": "web"
+      },
+      {
+        "label": "Challenge report",
+        "href": "https://www.imda.gov.sg/assets/04a3e3ba-6b33-4ca7-ad89-deb5a315dc04.pdf",
+        "icon": "paper"
+      },
+      {
+        "label": "Korea AISI, International AI Safety Report 2026 (KR edition)",
+        "href": "https://www.aisi.re.kr/kor/article/ATCL75b4fb0a5/119",
+        "icon": "paper"
+      }
+    ]
   },
   {
-    "date": "2025-05-01T00:00:00.000Z",
+    "date": "2025-05-01",
     "text": "Joined the newly formed **NAVER AI Safety Center** as its second member."
   },
   {
     "date": "2024-11-12",
-    "text": "Spoke at **DAN24**, NAVER's largest engineering conference, on bringing neural retrieval into the production search engine."
+    "text": "Spoke at **DAN24**, NAVER's largest engineering conference, on bringing neural retrieval into the production search engine.",
+    "links": [
+      {
+        "label": "Talk page",
+        "href": "https://dan.naver.com/24/sessions/587",
+        "icon": "web"
+      },
+      {
+        "label": "Video",
+        "href": "https://tv.naver.com/v/67452264",
+        "icon": "video"
+      }
+    ]
   }
 ]

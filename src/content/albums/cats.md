@@ -1,7 +1,7 @@
 ---
 title: "Cats"
 summary: "Outnumbered at home by two."
-cover: "/images/life/cats-cover.svg"
+cover: "/images/life/cats/cover.jpg"
 order: 3
 photos: []
 # photos 예시:

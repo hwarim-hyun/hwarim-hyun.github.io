@@ -44,9 +44,11 @@ const albums = defineCollection({
     title: z.string(),
     summary: z.string().optional(),   // 앨범 페이지 상단 한 줄
     cover: z.string(),                // 홈 카드 대표 이미지 (public/ 기준 경로)
+    coverPosition: z.string().default('center 50%'), // 카드 안에서 보이는 위치 (CSS object-position). 세로 사진은 값을 키우면 아래쪽이 보임
     photos: z.array(z.object({ src: z.string(), caption: z.string().optional() })).default([]),
     date: z.coerce.date().optional(), // 정렬(최신순). 없으면 order/제목 순
     order: z.number().optional(),     // 수동 정렬 knob (프로젝트와 같은 규칙)
+    hidden: z.boolean().default(false), // true 면 홈에서 숨김 (커버 준비 전 등)
   }),
 });
 
