@@ -15,7 +15,7 @@ Personal research / engineering portfolio, built with [Astro](https://astro.buil
 | `public/avatar.jpg` | 프로필 사진 |
 | `public/files/cv.pdf` | CV PDF (파일을 넣으면 "Download PDF" 링크가 동작) |
 | `src/data/README.md` | 각 JSON 의 필드 설명 |
-| `src/site.config.ts` | 내비게이션 메뉴 (컨텐츠 아님) |
+| `src/site.config.ts` | 내비게이션 메뉴 (컨텐츠 아님). CV 는 `profile.json` 의 `links.cv` 를 그대로 씀 |
 | `src/styles/global.css` | 색상 토큰 / 레이아웃. 라이트·다크 모드 지원 |
 
 ## Develop

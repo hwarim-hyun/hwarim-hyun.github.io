@@ -1,0 +1,63 @@
+---
+// 가로 스크롤 슬라이드. 마우스 휠/터치/화살표 버튼/키보드로 넘기고, 아래에 위치 점을 표시.
+interface Slide { src: string; caption?: string }
+interface Props { slides: Slide[]; alt?: string; ratio?: string }
+const { slides, alt = '', ratio = '16 / 9' } = Astro.props;
+const id = `slides-${Math.random().toString(36).slice(2, 8)}`;
+---
+<figure class="slides" id={id} data-count={slides.length}>
+  <div class="slides-track" tabindex="0" aria-label={alt} aria-roledescription="carousel" style={`--ratio: ${ratio}`}>
+    {slides.map((s, i) => (
+      <div class="slide" data-index={i} aria-label={`Slide ${i + 1} of ${slides.length}`}>
+        <img src={s.src} alt={s.caption ?? `${alt} (${i + 1}/${slides.length})`} loading="lazy" draggable="false" />
+      </div>
+    ))}
+  </div>
+  <div class="slides-nav">
+    <button type="button" class="slides-btn prev" aria-label="Previous slide">‹</button>
+    <div class="slides-dots" role="tablist">
+      {slides.map((_, i) => <button type="button" role="tab" class="dot" data-to={i} aria-label={`Go to slide ${i + 1}`} />)}
+    </div>
+    <span class="slides-caption" aria-live="polite"></span>
+    <button type="button" class="slides-btn next" aria-label="Next slide">›</button>
+  </div>
+  <script type="application/json" class="slides-captions" set:html={JSON.stringify(slides.map((s) => s.caption ?? ''))} />
+</figure>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.slides').forEach((root) => {
+    const track = root.querySelector<HTMLElement>('.slides-track')!;
+    const slides = Array.from(track.querySelectorAll<HTMLElement>('.slide'));
+    const dots = Array.from(root.querySelectorAll<HTMLButtonElement>('.dot'));
+    const caption = root.querySelector<HTMLElement>('.slides-caption')!;
+    const captions: string[] = JSON.parse(root.querySelector('.slides-captions')!.textContent || '[]');
+    let index = 0;
+
+    const goTo = (i: number) => {
+      index = Math.max(0, Math.min(slides.length - 1, i));
+      slides[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    };
+    const sync = () => {
+      const x = track.scrollLeft + track.clientWidth / 2;
+      let best = 0;
+      slides.forEach((s, i) => { if (s.offsetLeft <= x) best = i; });
+      index = best;
+      dots.forEach((d, i) => d.setAttribute('aria-selected', String(i === index)));
+      caption.textContent = captions[index] ? `${index + 1} / ${slides.length} · ${captions[index]}` : `${index + 1} / ${slides.length}`;
+    };
+
+    root.querySelector('.prev')?.addEventListener('click', () => goTo(index - 1));
+    root.querySelector('.next')?.addEventListener('click', () => goTo(index + 1));
+    dots.forEach((d) => d.addEventListener('click', () => goTo(Number(d.dataset.to))));
+    track.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(index + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(index - 1); }
+    });
+    // 세로 휠을 가로 이동으로: 슬라이드 위에서 스크롤하면 넘어감
+    track.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) { e.preventDefault(); track.scrollBy({ left: e.deltaY, behavior: 'auto' }); }
+    }, { passive: false });
+    sync();
+  });
+</script>

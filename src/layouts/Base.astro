@@ -12,6 +12,8 @@ interface Props {
 const { title, description = SITE.description, type = 'website' } = Astro.props;
 const fullTitle = title ? `${title} · ${SITE.name}` : SITE.title;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+// 소셜 공유 썸네일. 절대 URL 이어야 크롤러가 읽음. 교체: public/og.png (1200×630)
+const ogImage = new URL('/og.png', Astro.site).href;
 ---
 <!doctype html>
 <html lang="en">
@@ -22,12 +24,21 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title={SITE.name} href="/rss.xml" />
     <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={SITE.name} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${SITE.name} — ${SITE.tagline}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <script is:inline>
       (function () {
         try {

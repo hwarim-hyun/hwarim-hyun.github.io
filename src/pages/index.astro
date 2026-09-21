@@ -1,29 +1,25 @@
 ---
 import Base from '../layouts/Base.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-import Publication from '../components/Publication.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import { SITE, PROFILE } from '../site.config';
 import { getCollection } from 'astro:content';
 import { sortProjects, sortAlbums } from '../lib/sort';
 import { marked } from 'marked';
-import publications from '../data/publications.json';
 import news from '../data/news.json';
 import NewsItem from '../components/NewsItem.astro';
 import type { NewsLink } from '../components/NewsItem.astro';
 import highlights from '../data/highlights.json';
-import type { Pub } from '../components/Publication.astro';
 
 // JSON 문자열 안의 줄바꿈(\n)을 <br> 로. 인라인 마크다운도 함께 처리.
 const inline = (t: string) => marked.parseInline(t.replace(/\n/g, '<br>')) as string;
 
 const featured = sortProjects((await getCollection('projects')).filter((p) => p.data.featured));
-const selected = (publications as Pub[]).filter((p) => p.selected).sort((a, b) => b.year - a.year);
 const recentNews = (news as { date: string; text: string; links?: NewsLink[] }[])
   .map((n) => ({ ...n, date: new Date(n.date) }))
   .sort((a, b) => b.date.getTime() - a.date.getTime())
-  .slice(0, 5);
+  .slice(0, 3);
 // highlights.json 항목은 문자열이거나 { text } 객체 둘 다 허용
 const hl = (highlights as (string | { text: string })[]).map((h) => (typeof h === 'string' ? { text: h } : h));
 // Outside of Work 앨범 (src/content/albums). 비어 있으면 섹션 숨김
@@ -62,12 +58,15 @@ const hiddenIntro = PROFILE.intro.slice(fold);
     <SocialLinks />
   </section>
 
-  {hl.length > 0 && (
-    <section>
-      <h2>Highlights</h2>
-      <ul class="highlights">
-        {hl.map((h) => <li set:html={inline(h.text)} />)}
-      </ul>
+  {featured.length > 0 && (
+    <section class="featured">
+      <div class="section-head">
+        <h2>Featured Projects</h2>
+        <a href="/projects">All projects →</a>
+      </div>
+      <div class="grid featured-grid">
+        {featured.map((p) => <ProjectCard project={p} size="large" />)}
+      </div>
     </section>
   )}
 
@@ -83,26 +82,11 @@ const hiddenIntro = PROFILE.intro.slice(fold);
     </section>
   )}
 
-  {featured.length > 0 && (
-    <section class="featured">
-      <div class="section-head">
-        <h2>Featured Projects</h2>
-        <a href="/projects">All projects →</a>
-      </div>
-      <div class="grid featured-grid">
-        {featured.map((p) => <ProjectCard project={p} size="large" />)}
-      </div>
-    </section>
-  )}
-
-  {selected.length > 0 && (
+  {hl.length > 0 && (
     <section>
-      <div class="section-head">
-        <h2>Selected Publications</h2>
-        <a href="/publications">All publications →</a>
-      </div>
-      <ul class="pub-list compact">
-        {selected.map((p) => <Publication pub={p} compact />)}
+      <h2>Highlights</h2>
+      <ul class="highlights">
+        {hl.map((h) => <li set:html={inline(h.text)} />)}
       </ul>
     </section>
   )}

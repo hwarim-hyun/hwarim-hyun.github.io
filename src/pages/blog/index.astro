@@ -9,7 +9,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 ---
 <Base title="Notes" description="Notes on research, engineering, and things I learned.">
   <h1>Notes</h1>
-  <p class="muted">Occasional writing on research, systems, and things I learned the hard way. <a href="/rss.xml">RSS</a></p>
+  <p class="muted">Occasional writing on research, systems, and things I learned the hard way.</p>
   {posts.length === 0 && <p class="faint">Nothing here yet.</p>}
   <ul class="post-list">
     {posts.map((p) => (

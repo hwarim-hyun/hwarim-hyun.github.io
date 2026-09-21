@@ -21,6 +21,7 @@ export const SITE = {
     { href: '/projects', label: 'Projects' },
     { href: '/publications', label: 'Publications' },
     { href: '/news', label: 'News' },
-    { href: '/blog', label: 'Notes' },
+    // Notes(/blog)는 글이 생기면 다시 넣기: { href: '/blog', label: 'Notes' }
+    { href: profile.links.cv, label: 'CV', external: true },
   ],
 };

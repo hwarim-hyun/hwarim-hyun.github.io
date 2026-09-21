@@ -259,3 +259,20 @@ a.pill:hover { border-color: var(--accent); color: var(--accent); text-decoratio
 
 /* photos: discourage saving (not a real protection) and frame portrait covers */
 .protected img, .album-card img { -webkit-user-drag: none; user-select: none; -webkit-touch-callout: none; }
+
+/* horizontal slide deck */
+.slides { margin: 1.25rem 0 1.5rem; }
+.slides-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: .6rem; border-radius: 10px; scrollbar-width: none; outline: none; }
+.slides-track::-webkit-scrollbar { display: none; }
+.slides-track:focus-visible { box-shadow: 0 0 0 2px var(--accent); }
+.slide { flex: 0 0 92%; scroll-snap-align: start; aspect-ratio: var(--ratio, 16 / 9); background: #000; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+/* 마지막 슬라이드도 왼쪽에 스냅되도록 오른쪽 여백 확보 */
+.slides-track::after { content: ''; flex: 0 0 8%; }
+.slide img { width: 100%; height: 100%; object-fit: contain; display: block; margin: 0; border: 0; padding: 0; background: #000; border-radius: 0; }
+.slides-nav { display: flex; align-items: center; gap: .6rem; margin-top: .6rem; font-size: .85rem; color: var(--fg-faint); }
+.slides-btn { background: var(--bg-elev); border: 1px solid var(--line); color: var(--fg-muted); border-radius: 6px; width: 1.9rem; height: 1.9rem; line-height: 1; font-size: 1.1rem; cursor: pointer; }
+.slides-btn:hover { color: var(--fg); border-color: var(--fg-faint); }
+.slides-dots { display: flex; gap: .35rem; }
+.dot { width: .5rem; height: .5rem; border-radius: 50%; border: 0; padding: 0; background: var(--line); cursor: pointer; }
+.dot[aria-selected="true"] { background: var(--accent); }
+.slides-caption { margin-left: auto; text-align: right; }
