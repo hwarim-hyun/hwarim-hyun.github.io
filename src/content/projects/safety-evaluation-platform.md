@@ -22,7 +22,7 @@ order: 1
 
 **Problem**
 - *Background.* NAVER ships a growing number of AI agents, from conversational search to task agents. The AI Safety Center is the one team responsible for evaluating all of them.
-- *Motivation.* Model-level alignment does not settle safety. The same model in a different agent, in front of different users, carries a different set of risks, so safety has to be measured where the model meets the agent.
+- *Motivation.* Model-level alignment does not settle safety. The same model in a different agent, in front of different users, carries a different set of risks, so safety has to be measured where the agent meets its users.
 - *Problem definition.* Evaluate NAVER's diverse AI agents against one shared standard, so results are comparable across agents: the same risk taxonomy, the same measurement, before launch and again as the agent changes.
 - *Why it's hard.* Each product team used to check safety its own way, so results were not comparable. Manual review does not scale to ten thousand adversarial queries a round. And a naive harm-only metric rewards the product that refuses everything.
 
@@ -34,7 +34,7 @@ order: 1
 
 **Result**
 - Against the manual process used through 2025, evaluation turnaround fell 80% while queries per round rose 5× and the number of risk categories covered grew 2.2×.
-- Roughly ten thousand adversarial queries per round, across NAVER's AI agents; the first evaluations ran in April 2026.
+- Roughly ten thousand adversarial queries per round, across NAVER's AI agents; the first automated evaluation ran in April 2026.
 - The framework is described in NAVER's first AI Safety Progress Report (Sep 2026). NAVER is pursuing ISO/IEC 42001 certification for the AI management system this evaluation process is part of.
 
 ## Engineering details
@@ -48,9 +48,9 @@ Harmfulness asks whether a response contains something that can hurt the user. H
 | Harmfulness | Does it contain content that can harm the user? | unsafe answers |
 | Helpfulness | Does it answer appropriately, with the required safety elements? | over-refusal, missing or unnecessary disclaimers |
 
-### 2. Scope from the taxonomy, not from the team
+### 2. Risk taxonomy as evaluation scope
 
-Before each evaluation, the agent's specification is mapped against N-ARTI (NAVER AI Risk Taxonomy & Identification), the company-wide risk taxonomy of 110 items: who the users are, which model and data it uses, what tools an agent can call, whether minors can reach it, whether it touches health, finance, or law. That mapping fixes the risk categories and their priority. Each item has its own evaluation criterion, and N-ASET evaluates about half of them today: some items are not yet defined tightly enough to be measured automatically, others need infrastructure the toolkit does not have yet, and coverage is being widened round by round. Some items apply to every agent, such as unqualified expert advice, facilitation of illegal acts, discrimination, and age-inappropriate content; others come from the agent's own function. Writing this down first makes the result a measurement against an agreed standard rather than an opinion.
+Before each evaluation, the agent's specification is mapped against N-ARTI (NAVER AI Risk Taxonomy & Identification), the company-wide risk taxonomy of 110 items: who the users are, which model and data it uses, what tools an agent can call, whether minors can reach it, whether it touches health, finance, or law. That mapping fixes the risk categories and their priority. Each item has its own evaluation criterion, and N-ASET evaluates them. Fixing the scope this way first makes the result a measurement against an agreed standard rather than an opinion.
 
 ### 3. Pipeline
 

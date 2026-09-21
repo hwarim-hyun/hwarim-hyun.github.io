@@ -19,7 +19,7 @@ order: 2
 **Problem**
 - *Background.* As the company's sole AI safety team, we automatically evaluate NAVER's diverse AI agents before launch with a judge LLM, the grader behind our [safety evaluation platform](/projects/safety-evaluation-platform). We had built our own risk taxonomy and, for each risk category, an evaluation criterion that labels a response harmful, grey, or safe.
 - *Motivation.* Product teams experience **safety as a usability tax**. Every false positive costs them a manual review, so for safety evaluation to fit their product cycles, **precision on harmful had to be high**.
-- *Problem definition.* Before deploying the criteria, determine whether they are precise enough to be useful, and whether the new criteria, run on the same model, beat the single moderation prompt we used before.
+- *Problem definition.* Before deploying the criteria, determine whether they are precise enough to be useful, and whether the new criteria, run on the same model, beat the moderation prompt we used before.
 - *Why it's hard.* No labeled data existed, and harmful responses are rare in traffic. Human annotation was expensive, so the same limited budget had to serve both refining the criteria and verifying them.
 
 **Action**

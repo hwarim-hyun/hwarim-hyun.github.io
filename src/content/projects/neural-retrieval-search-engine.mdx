@@ -23,8 +23,8 @@ import Slides from '../../components/Slides.astro';
 ## Summary
 
 **Problem**
-- *Background.* Nexus++, NAVER's in-house search engine, runs neural retrieval with [ColBERT](https://arxiv.org/abs/2004.12832), a multi-vector model: every document becomes up to 100 vectors, so the index holds 50 billion+ vectors.
-- *Motivation.* The business wanted better search quality while the machine budget stayed flat.
+- *Background.* Nexus++, NAVER's in-house search engine, runs neural retrieval with [ColBERT](https://arxiv.org/abs/2004.12832), a multi-vector model: every document becomes roughly 100 vectors, so the index holds 50 billion+ vectors.
+- *Motivation.* Multi-vector scoring had become the most expensive step in the engine, so its cost per query was what limited how widely neural retrieval could be served.
 - *Problem definition.* Serve the same neural search faster on the same hardware, with the existing model and the existing vectors.
 - *Why it's hard.* The engine is the first stage of the ranking pipeline and must answer in under 100 ms, and ColBERT scoring took half of that. The academic answers ([ColBERTv2](https://arxiv.org/abs/2112.01488), [XTR](https://arxiv.org/abs/2304.01982)) assume retraining, which was off the table.
 
@@ -41,7 +41,7 @@ import Slides from '../../components/Slides.astro';
 
 ### How ColBERT scoring works in the engine
 
-A query becomes a few vectors, a document up to 100. Retrieval runs one single-vector ANN search per query vector (top-K each) and takes the union of the documents hit, well under 0.01% of the corpus. Ranking then computes the full ColBERT score for each candidate: for every query vector, the maximum similarity to any document vector, summed. Retrieval and ranking each took roughly half of the latency budget.
+A query becomes a few vectors, a document roughly 100. Retrieval runs one single-vector ANN search per query vector (top-K each) and takes the union of the documents hit (in practice, well under 0.01% of the corpus). Ranking then computes the full ColBERT score for each candidate: for every query vector, the maximum similarity to any document vector, summed. Retrieval and ranking each took roughly half of the latency budget.
 
 <Slides
   alt="How the ColBERT score is computed, step by step"
@@ -72,9 +72,9 @@ A document vector that was not retrieved for a query vector is, by construction,
 
 ### From XTR to MSI++ (ours)
 
-[XTR](https://arxiv.org/abs/2304.01982) (Lee et al. 2023) goes further. The approximate score still computes a few extra similarities for the retrieved pairs; XTR uses only the similarities the ANN search has already cached and computes nothing new, so the remaining 5 ms disappears as well. When a query vector retrieved nothing from a document, that term of the score is undefined.
+[XTR](https://arxiv.org/abs/2304.01982) (Lee et al. 2023) goes further. The approximate score still computes a few extra similarities for the retrieved pairs; XTR uses only the similarities the ANN search has already cached and computes nothing new, so the remaining 5 ms disappears as well. The catch: when a query vector retrieved nothing from a document, that term of the score has no cached value, so the document cannot be scored as is.
 
-- **MSI (from XTR).** Missing Similarity Imputation fills the gap with the similarity of the top-K-th vector retrieved for that query vector. Any unretrieved document vector is at most that similar, so this is an upper bound and the imputed score is never below the true ColBERT score. XTR pairs this with retraining the model; we used the imputation alone.
+- **MSI (from XTR).** Missing Similarity Imputation fills the gap with the similarity of the top-K-th vector retrieved for that query vector (not necessarily from the same document). Any unretrieved document vector is at most that similar, so this is an upper bound and the imputed score is never below the true ColBERT score. XTR pairs this with retraining the model; we used the imputation alone.
 - **MSI++ (ours).** The first lever is to retrieve more candidates so fewer similarities go missing: raising top-K up to the HNSW ef parameter costs no throughput. Some documents stay over-scored even then, because the plain upper bound still over-rewards documents with several missing similarities. MSI++ covers them by multiplying the imputed value by a penalty α (0 < α < 1), tuned to α = 0.7, so the score approximates rather than bounds the true one.
 
 MSI++ is the model we shipped; in the DAN24 talk it is presented under the name NAVER-1.
