@@ -60,7 +60,7 @@ A query becomes a few vectors, a document up to 100. Retrieval runs one single-v
 
 ### Approximate score: rank with what retrieval already computed
 
-A document vector that was not retrieved for a query vector is, by construction, not among that vector's nearest neighbours, so it rarely wins the max. Dropping those pairs and summing only the similarities the ANN step already produced gives an approximate score ([ColBERTv2](https://arxiv.org/abs/2112.01488), Santhanam et al. 2022; [Macdonald and Tonellotto 2021](https://arxiv.org/abs/2108.11480)) at a fraction of the cost. Against full ColBERT it kept 93–97% of quality while ranking time fell from about 50 ms to about 5 ms and peak throughput rose 1.7×.
+A document vector that was not retrieved for a query vector is, by construction, not among that vector's nearest neighbors, so it rarely wins the max. Dropping those pairs and summing only the similarities the ANN step already produced gives an approximate score ([ColBERTv2](https://arxiv.org/abs/2112.01488), Santhanam et al. 2022; [Macdonald and Tonellotto 2021](https://arxiv.org/abs/2108.11480)) at a fraction of the cost. Against full ColBERT it kept 93–97% of quality while ranking time fell from about 50 ms to about 5 ms and peak throughput rose 1.7×.
 
 <Slides
   alt="Approximate score: intuition, formula, and latency profile"
@@ -84,7 +84,7 @@ MSI++ is the model we shipped; in the DAN24 talk it is presented under the name 
   slides={[
     { src: '/images/projects/xtr/03.jpg', caption: 'The approximate score still computes a few similarities (white boxes) beyond what ANN cached (orange boxes)' },
     { src: '/images/projects/xtr/04.jpg', caption: 'XTR basic: cached similarities only; a missing term leaves the score undefined' },
-    { src: '/images/projects/xtr/05.jpg', caption: 'MSI: a vector outside the top-K radius is at most as similar as the K-th neighbour (0.87)' },
+    { src: '/images/projects/xtr/05.jpg', caption: 'MSI: a vector outside the top-K radius is at most as similar as the K-th neighbor (0.87)' },
     { src: '/images/projects/xtr/06.jpg', caption: 'MSI score is an upper bound on the true ColBERT score' },
     { src: '/images/projects/xtr/07.jpg', caption: 'Tuning point 1: raise top-K toward ef so fewer similarities go missing' },
     { src: '/images/projects/xtr/08.jpg', caption: 'MSI++: scale the imputed value by α to tighten the bound (α = 0.7)' },

@@ -1,5 +1,5 @@
 ---
-title: "Cats"
+title: "Housemates"
 summary: "Outnumbered at home by two."
 cover: "/images/life/cats/cover.jpg"
 order: 3

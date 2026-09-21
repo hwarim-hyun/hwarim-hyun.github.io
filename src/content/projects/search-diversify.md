@@ -27,7 +27,7 @@ featured: true
 **Result**
 - Throughput up to +4.2% at CPU saturation, on an engine with 20+ years of optimization behind it, where a 1% gain is considered hard.
 - Large drop in memory use, improving server stability under average load.
-- Deployed to NAVER commerce search (2024 Q2).
+- Deployed to production.
 
 ## Engineering details
 

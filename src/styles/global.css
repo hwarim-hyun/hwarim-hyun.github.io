@@ -276,3 +276,9 @@ a.pill:hover { border-color: var(--accent); color: var(--accent); text-decoratio
 .dot { width: .5rem; height: .5rem; border-radius: 50%; border: 0; padding: 0; background: var(--line); cursor: pointer; }
 .dot[aria-selected="true"] { background: var(--accent); }
 .slides-caption { margin-left: auto; text-align: right; }
+
+/* inline SVG charts in articles */
+.prose figure.chart { margin: 1.25rem 0 1.5rem; }
+.prose figure.chart svg { display: block; }
+.prose figure.chart svg text { font-family: var(--font-sans); }
+.prose figure.chart figcaption { font-size: .85rem; color: var(--fg-faint); margin-top: .5rem; }
