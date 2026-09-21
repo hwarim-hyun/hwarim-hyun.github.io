@@ -9,7 +9,7 @@ tags: ["AI Safety", "Evaluation Infrastructure", "Adversarial Testing", "Python"
 metrics:
   - { value: "−80%", label: "evaluation turnaround" }
   - { value: "5×", label: "adversarial queries per round" }
-  - { value: "24 → 52", label: "risk categories evaluated" }
+  - { value: "2.2×", label: "risk categories evaluated" }
 links:
   - { label: "AI Safety Progress Report 2026 (Korean)", href: "https://www.navercorp.com/media/aiInNaver/buildingAiDetail?seq=10034660", icon: paper }
   - { label: "Press (Asia Today)", href: "https://en.asiatoday.co.kr/view.php?key=20260916000947283", icon: web }
@@ -33,7 +33,7 @@ order: 1
 - With the team, set the evaluation on two axes measured together, **harmfulness and helpfulness**, so that over-refusal counts as a defect rather than as safety.
 
 **Result**
-- Against the manual process used through 2025, evaluation turnaround fell 80% while queries per round rose 5× and risk categories covered grew from 24 to 52.
+- Against the manual process used through 2025, evaluation turnaround fell 80% while queries per round rose 5× and the number of risk categories covered grew 2.2×.
 - Roughly ten thousand adversarial queries per round, across NAVER's AI agents; the first evaluations ran in April 2026.
 - The framework is described in NAVER's first AI Safety Progress Report (Sep 2026). NAVER is pursuing ISO/IEC 42001 certification for the AI management system this evaluation process is part of.
 
@@ -50,7 +50,7 @@ Harmfulness asks whether a response contains something that can hurt the user. H
 
 ### 2. Scope from the taxonomy, not from the team
 
-Before each evaluation, the agent's specification is mapped against N-ARTI (NAVER AI Risk Taxonomy & Identification), the company-wide risk taxonomy of 110 items: who the users are, which model and data it uses, what tools an agent can call, whether minors can reach it, whether it touches health, finance, or law. That mapping fixes the risk categories and their priority. Each item has its own evaluation criterion, and N-ASET evaluates 52 of the 110 today: some items are not yet defined tightly enough to be measured automatically, others need infrastructure the toolkit does not have yet, and coverage is being widened round by round. Some items apply to every agent, such as unqualified expert advice, facilitation of illegal acts, discrimination, and age-inappropriate content; others come from the agent's own function. Writing this down first makes the result a measurement against an agreed standard rather than an opinion.
+Before each evaluation, the agent's specification is mapped against N-ARTI (NAVER AI Risk Taxonomy & Identification), the company-wide risk taxonomy of 110 items: who the users are, which model and data it uses, what tools an agent can call, whether minors can reach it, whether it touches health, finance, or law. That mapping fixes the risk categories and their priority. Each item has its own evaluation criterion, and N-ASET evaluates about half of them today: some items are not yet defined tightly enough to be measured automatically, others need infrastructure the toolkit does not have yet, and coverage is being widened round by round. Some items apply to every agent, such as unqualified expert advice, facilitation of illegal acts, discrimination, and age-inappropriate content; others come from the agent's own function. Writing this down first makes the result a measurement against an agreed standard rather than an opinion.
 
 ### 3. Pipeline
 
