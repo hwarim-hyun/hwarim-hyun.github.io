@@ -1,20 +1,110 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 1200' width='900' height='1200'>
-<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#f3f2ee'/><stop offset='1' stop-color='#e9e7e1'/></linearGradient></defs>
-<rect width='900' height='1200' fill='url(#g)'/>
-<g transform='translate(63.0 406.5) scale(1.6826)' fill='none' stroke='#1c1c1a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'>
-<rect x='0' y='40' width='40' height='40' rx='8' fill='#1f5fbf' stroke='none'/>
-<rect x='46' y='40' width='40' height='40' rx='8' fill='#3aa561' stroke='none'/>
-<rect x='92' y='40' width='40' height='40' rx='8' fill='#b9b7b0' stroke='none'/>
-<rect x='138' y='40' width='40' height='40' rx='8' fill='#1f5fbf' stroke='none'/>
-<rect x='184' y='40' width='40' height='40' rx='8' fill='#b9b7b0' stroke='none'/>
-<rect x='230' y='40' width='40' height='40' rx='8' fill='#b9b7b0' stroke='none'/>
-<rect x='276' y='40' width='40' height='40' rx='8' fill='#3aa561' stroke='none'/>
-<rect x='322' y='40' width='40' height='40' rx='8' fill='#3aa561' stroke='none'/>
-<rect x='368' y='40' width='40' height='40' rx='8' fill='#1f5fbf' stroke='none'/>
-<rect x='414' y='40' width='40' height='40' rx='8' fill='#b9b7b0' stroke='none'/>
-<path d='M230 100 v40 m-14 -14 l14 14 l14 -14' stroke='#1c1c1a'/>
-<rect x='160' y='160' width='44' height='44' rx='8' fill='#1f5fbf' stroke='none'/>
-<rect x='210' y='160' width='44' height='44' rx='8' fill='#3aa561' stroke='none'/>
-<rect x='260' y='160' width='44' height='44' rx='8' fill='#b9b7b0' stroke='none'/>
-<rect x='152' y='152' width='160' height='60' rx='14' stroke='#1c1c1a' stroke-width='3' stroke-dasharray='6 6'/>
-</g></svg>
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 1200' width='900' height='1200' font-family='ui-sans-serif,-apple-system,Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif'>
+<defs><marker id='a' markerWidth='10' markerHeight='10' refX='9' refY='5' orient='auto' markerUnits='userSpaceOnUse'><path d='M0,0 L10,5 L0,10 z' fill='#8a8a8a'/></marker></defs>
+<rect width='900' height='1200' fill='#ffffff'/>
+<g transform='translate(-2.25 -36.0) scale(1.35)'>
+<rect x='40' y='80' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='63.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>0</text>
+<rect x='86' y='80' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='109.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>1</text>
+<rect x='132' y='80' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='155.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>2</text>
+<rect x='178' y='80' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='201.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>3</text>
+<rect x='224' y='80' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='247.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>4</text>
+<rect x='270' y='80' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='293.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>5</text>
+<rect x='316' y='80' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='339.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>6</text>
+<rect x='362' y='80' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='385.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>7</text>
+<rect x='408' y='80' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='431.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>8</text>
+<rect x='454' y='80' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='477.0' y='70' text-anchor='middle' font-size='17' fill='#5f5e5a'>9</text>
+</g>
+<g transform='translate(-2.25 -80.0) scale(1.35)'>
+<text x='40' y='222' font-size='24' font-weight='700' fill='#1c1c1a' text-anchor='start'>AS-IS</text>
+<text x='166' y='222' font-size='16' font-weight='normal' fill='#5f5e5a' text-anchor='start'>per-group heaps</text>
+<text x='150' y='269.0' font-size='19' font-weight='normal' fill='#b5651d' text-anchor='end'>Group 1</text>
+<rect x='166' y='240' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='189.0' y='270.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>3</text>
+<rect x='212' y='240' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='235.0' y='270.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>0</text>
+<rect x='258' y='240' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='281.0' y='270.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>8</text>
+<text x='150' y='333.0' font-size='19' font-weight='normal' fill='#4f8a3c' text-anchor='end'>Group 2</text>
+<rect x='166' y='304' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='189.0' y='334.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>1</text>
+<rect x='212' y='304' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='235.0' y='334.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>7</text>
+<rect x='258' y='304' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='281.0' y='334.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>6</text>
+<text x='150' y='397.0' font-size='19' font-weight='normal' fill='#5f5e5a' text-anchor='end'>Group 3</text>
+<rect x='166' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='189.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>5</text>
+<rect x='212' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='235.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>4</text>
+<rect x='258' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='281.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>9</text>
+<rect x='304' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='327.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>2</text>
+<text x='150' y='467.0' font-size='19' font-weight='600' fill='#1c1c1a' text-anchor='end'>top-N</text>
+<rect x='166' y='438' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='189.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>5</text>
+<rect x='212' y='438' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='235.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>3</text>
+<rect x='258' y='438' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='281.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>1</text>
+<rect x='304' y='438' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='327.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>0</text>
+<rect x='350' y='438' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='373.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>4</text>
+<rect x='396' y='438' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='419.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>7</text>
+<rect x='442' y='438' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='465.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>9</text>
+<rect x='488' y='438' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='511.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>6</text>
+<rect x='534' y='438' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='557.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>8</text>
+<rect x='580' y='438' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='603.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>2</text>
+</g>
+<line x1='450.0' y1='600' x2='450.0' y2='665' stroke='#8a8a8a' stroke-width='4' marker-end='url(#a)'/>
+<g transform='translate(-987.75 420.0) scale(1.35)'>
+<text x='770' y='222' font-size='24' font-weight='700' fill='#1c1c1a' text-anchor='start'>TO-BE</text>
+<text x='896' y='222' font-size='16' font-weight='normal' fill='#5f5e5a' text-anchor='start'>per-group heaps</text>
+<text x='880' y='269.0' font-size='19' font-weight='normal' fill='#b5651d' text-anchor='end'>Group 1</text>
+<rect x='896' y='240' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='919.0' y='270.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>3</text>
+<rect x='942' y='240' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='965.0' y='270.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>0</text>
+<rect x='988' y='240' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='1011.0' y='270.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>8</text>
+<text x='880' y='333.0' font-size='19' font-weight='normal' fill='#4f8a3c' text-anchor='end'>Group 2</text>
+<rect x='896' y='304' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='919.0' y='334.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>1</text>
+<rect x='942' y='304' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='965.0' y='334.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>7</text>
+<rect x='988' y='304' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='1011.0' y='334.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>6</text>
+<text x='880' y='397.0' font-size='19' font-weight='normal' fill='#5f5e5a' text-anchor='end'>Group 3</text>
+<rect x='896' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='919.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>5</text>
+<rect x='942' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='965.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>4</text>
+<rect x='988' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='1011.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>9</text>
+<rect x='1034' y='368' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='1057.0' y='398.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>2</text>
+<text x='880' y='467.0' font-size='19' font-weight='600' fill='#1c1c1a' text-anchor='end'>minimum</text>
+<rect x='896' y='438' width='46' height='46' fill='#e9e9e9' stroke='#8a8a8a' stroke-width='2'/>
+<text x='919.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>5</text>
+<rect x='942' y='438' width='46' height='46' fill='#f6c9a0' stroke='#8a8a8a' stroke-width='2'/>
+<text x='965.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>3</text>
+<rect x='988' y='438' width='46' height='46' fill='#bfe3b4' stroke='#8a8a8a' stroke-width='2'/>
+<text x='1011.0' y='468.0' text-anchor='middle' font-size='20' fill='#1c1c1a'>1</text>
+</g>
+<text x='450.0' y='1160' font-size='36' font-weight='700' fill='#1c1c1a' text-anchor='middle'>Space complexity: O(N) → O(K)</text>
+</svg>

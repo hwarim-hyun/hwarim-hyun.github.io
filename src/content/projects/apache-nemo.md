@@ -15,8 +15,8 @@ links:
   - { label: "PR #289: task metrics for sampling", href: "https://github.com/apache/incubator-nemo/pull/289", icon: code }
   - { label: "PR #292: DAG structure for dynamic sampling", href: "https://github.com/apache/incubator-nemo/pull/292", icon: code }
   - { label: "PR #293: runtime re-configuration from sampled metrics", href: "https://github.com/apache/incubator-nemo/pull/293", icon: code }
-thumbnail: "/images/projects/thumbs/apache-nemo.svg"
-thumbnailTall: "/images/projects/thumbs/apache-nemo-tall.svg"
+thumbnail: "/images/projects/thumbs/apache-nemo.png"
+thumbnailTall: "/images/projects/thumbs/apache-nemo-tall.png"
 featured: false
 ---
 

@@ -5,7 +5,7 @@ date: 2024-06-01
 period: "2023 — 2024"
 org: "NAVER · Search Engine Team"
 role: "Software Engineer, sole implementer"
-tags: ["Search Engine", "Algorithms", "C++", "Performance"]
+tags: ["Search Engine", "Algorithms", "Information Retrieval & Ranking","C++", "Performance"]
 metrics:
   - { value: "O(N) → O(K)", label: "space complexity" }
   - { value: "+4.2%", label: "throughput (QPS) at CPU saturation" }

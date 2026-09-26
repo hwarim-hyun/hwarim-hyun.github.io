@@ -5,7 +5,7 @@ date: 2026-04-20
 period: "2026"
 org: "NAVER · AI Safety Center"
 role: "AI Safety Evaluation Engineer, experiment design and implementation"
-tags: ["AI Safety", "LLM-as-a-judge", "Experiment Design", "Statistics", "Evaluation"]
+tags: ["AI Safety", "AI Evaluation", "Experiment Design", "Statistics", "LLM-as-a-judge"]
 metrics:
   - { value: "+11.5%p", label: "precision on harmful" }
   - { value: "−91%", label: "false positives" }
