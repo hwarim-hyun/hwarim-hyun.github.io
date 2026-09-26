@@ -1,0 +1,40 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' width='1600' height='900'>
+<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#f3f2ee'/><stop offset='1' stop-color='#e9e7e1'/></linearGradient></defs>
+<rect width='1600' height='900' fill='url(#g)'/>
+<g transform='translate(224.0 203.1) scale(2.0571)' fill='none' stroke='#1c1c1a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'>
+<rect x='24' y='54' width='32' height='32' rx='8' fill='#1f5fbf' stroke='none'/>
+<rect x='24' y='114' width='32' height='32' rx='8' fill='#1f5fbf' stroke='none'/>
+<rect x='24' y='174' width='32' height='32' rx='8' fill='#1f5fbf' stroke='none'/>
+<rect x='286' y='36' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='286' y='82' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='286' y='128' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='286' y='174' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='346' y='36' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='346' y='82' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='346' y='128' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='346' y='174' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='406' y='36' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='406' y='82' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='406' y='128' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='406' y='174' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='466' y='36' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='466' y='82' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='466' y='128' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='466' y='174' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='526' y='36' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='526' y='82' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='526' y='128' width='28' height='28' rx='6' fill='#fff'/>
+<rect x='526' y='174' width='28' height='28' rx='6' fill='#fff'/>
+<line x1='56' y1='70' x2='286' y2='50' stroke='#1f5fbf' stroke-width='3'/>
+<line x1='56' y1='70' x2='346' y2='96' stroke='#1f5fbf' stroke-width='3'/>
+<line x1='56' y1='70' x2='406' y2='96' stroke='#1f5fbf' stroke-width='3'/>
+<line x1='56' y1='130' x2='346' y2='142' stroke='#1f5fbf' stroke-width='3'/>
+<line x1='56' y1='130' x2='406' y2='188' stroke='#1f5fbf' stroke-width='3'/>
+<line x1='56' y1='130' x2='466' y2='142' stroke='#1f5fbf' stroke-width='3'/>
+<line x1='56' y1='190' x2='286' y2='142' stroke='#1f5fbf' stroke-width='3'/>
+<line x1='56' y1='190' x2='466' y2='96' stroke='#1f5fbf' stroke-width='3'/>
+<line x1='56' y1='190' x2='526' y2='142' stroke='#1f5fbf' stroke-width='3'/>
+<line x1='56' y1='70' x2='526' y2='50' stroke='#b9b7b0' stroke-width='3' stroke-dasharray='8 8'/>
+<line x1='56' y1='130' x2='286' y2='188' stroke='#b9b7b0' stroke-width='3' stroke-dasharray='8 8'/>
+<line x1='56' y1='190' x2='346' y2='188' stroke='#b9b7b0' stroke-width='3' stroke-dasharray='8 8'/>
+</g></svg>

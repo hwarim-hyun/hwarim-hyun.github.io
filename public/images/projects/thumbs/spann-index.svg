@@ -1,0 +1,16 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' width='1600' height='900'>
+<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#f3f2ee'/><stop offset='1' stop-color='#e9e7e1'/></linearGradient></defs>
+<rect width='1600' height='900' fill='url(#g)'/>
+<g transform='translate(224.0 244.3) scale(2.0571)' fill='none' stroke='#1c1c1a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'>
+<rect x='0' y='120' width='38' height='60' rx='6' fill='#b9b7b0' stroke='none'/>
+<rect x='46' y='40' width='38' height='140' rx='6' fill='#b9b7b0' stroke='none'/>
+<rect x='92' y='140' width='38' height='40' rx='6' fill='#b9b7b0' stroke='none'/>
+<rect x='138' y='70' width='38' height='110' rx='6' fill='#b9b7b0' stroke='none'/>
+<rect x='184' y='100' width='38' height='80' rx='6' fill='#b9b7b0' stroke='none'/>
+<path d='M250 110 h40 m-14 -14 l14 14 l-14 14' stroke='#1c1c1a'/>
+<rect x='320' y='94' width='38' height='86' rx='6' fill='#1f5fbf' stroke='none'/>
+<rect x='366' y='90' width='38' height='90' rx='6' fill='#1f5fbf' stroke='none'/>
+<rect x='412' y='96' width='38' height='84' rx='6' fill='#1f5fbf' stroke='none'/>
+<rect x='458' y='92' width='38' height='88' rx='6' fill='#1f5fbf' stroke='none'/>
+<rect x='504' y='94' width='38' height='86' rx='6' fill='#1f5fbf' stroke='none'/>
+</g></svg>

@@ -4,12 +4,18 @@ interface Props { project: CollectionEntry<'projects'>; size?: 'default' | 'larg
 const { project, size = 'default' } = Astro.props;
 const d = project.data;
 const href = `/projects/${project.id}`;
+// 홈의 가로 카드(large)는 세로 칸이라 thumbnailTall 을 우선 쓴다
+const thumb = size === 'large' ? (d.thumbnailTall ?? d.thumbnail) : d.thumbnail;
 ---
-{/* 6개 섹션을 항상 같은 순서로 렌더해서, 그리드의 subgrid 로 이웃 카드와 섹션 높이를 맞춘다 */}
+{/* 7개 섹션을 항상 같은 순서로 렌더해서, 그리드의 subgrid 로 이웃 카드와 섹션 높이를 맞춘다 */}
 <article class:list={['card', 'project-card', { large: size === 'large' }]}>
   <p class="card-context">
     {d.org}{d.org && d.period && <span class="faint"> · </span>}{d.period && <span class="faint">{d.period}</span>}
   </p>
+  {/* 썸네일: 3열 카드에서는 헤더와 제목 사이, 홈의 가로 카드에서는 왼쪽 열. 이미지가 없으면 빈 자리(배경만)를 두고, dev 에서는 점선과 라벨로 표시 */}
+  {thumb
+    ? <a class="card-thumb" href={href} tabindex="-1" aria-hidden="true"><img src={thumb} alt="" loading="lazy" style={`object-position: ${d.thumbnailPosition}`} /></a>
+    : <div class:list={["card-thumb", "card-thumb-empty", { dev: import.meta.env.DEV }]} aria-hidden="true">{import.meta.env.DEV && <span>thumbnail</span>}</div>}
   <h3><a href={href}>{d.title}</a></h3>
   <p class="card-summary">{d.summary}</p>
   <dl class="metrics">

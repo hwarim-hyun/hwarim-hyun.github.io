@@ -10,6 +10,7 @@ const projects = defineCollection({
     date: z.coerce.date(),        // 정렬 기준: 최신순 (보통 종료/발표 시점)
     period: z.string().optional(),// 표시용 기간 e.g. "2025 — Present"
     org: z.string().optional(),   // 소속/맥락 e.g. "NAVER · AI Safety Center"
+    orgs: z.array(z.string()).default([]), // 상세 페이지 소속 소개에 추가할 단체 (orgs.json 키) e.g. ["Google Summer of Code"]
     role: z.string().optional(),  // 역할 e.g. "Lead engineer"
     tags: z.array(z.string()).default([]),
     // 카드에 크게 보이는 임팩트 지표 (2~3개 권장)
@@ -20,6 +21,11 @@ const projects = defineCollection({
       href: z.string().url(),
       icon: z.enum(['web', 'slides', 'video', 'paper', 'code', 'external']).optional(),
     })).default([]),
+    // 카드 썸네일 (public/ 기준 경로). thumbnail 은 프로젝트 목록의 16:9 칸용 (e.g. 1600×900),
+    // thumbnailTall 은 홈 Featured 의 세로 칸용 (3:4, e.g. 900×1200). tall 이 없으면 thumbnail 을 대신 씀. 둘 다 없으면 빈 자리
+    thumbnail: z.string().optional(),
+    thumbnailTall: z.string().optional(),
+    thumbnailPosition: z.string().default('center 50%'), // 칸 안에서 보이는 위치 (CSS object-position)
     featured: z.boolean().default(false),
     // 수동 정렬 knob. 지정한 항목은 이 숫자 오름차순으로 앞에 오고, 나머지는 date 최신순으로 뒤에 옵니다.
     order: z.number().optional(),

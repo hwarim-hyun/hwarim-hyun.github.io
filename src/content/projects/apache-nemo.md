@@ -4,6 +4,7 @@ summary: "Let a distributed data-processing engine pick task parallelism while a
 date: 2020-11-24
 period: "2020"
 org: "Apache Software Foundation"
+orgs: ["Google Summer of Code"]
 role: "Contributor, later committer"
 tags: ["Distributed Systems", "Runtime Optimization", "Java", "Open Source"]
 metrics:
@@ -14,27 +15,30 @@ links:
   - { label: "PR #289: task metrics for sampling", href: "https://github.com/apache/incubator-nemo/pull/289", icon: code }
   - { label: "PR #292: DAG structure for dynamic sampling", href: "https://github.com/apache/incubator-nemo/pull/292", icon: code }
   - { label: "PR #293: runtime re-configuration from sampled metrics", href: "https://github.com/apache/incubator-nemo/pull/293", icon: code }
+thumbnail: "/images/projects/thumbs/apache-nemo.svg"
+thumbnailTall: "/images/projects/thumbs/apache-nemo-tall.svg"
 featured: false
 ---
 
 ## Summary
 
 **Problem**
-- *Background.* Apache Nemo is a distributed data-processing runtime. It takes a workload from a framework such as Apache Beam, represents it as a DAG of computations and data dependencies, and separates the processing logic from how it is executed, so execution can be optimized at runtime.
-- *Motivation.* Task parallelism, how many pieces a stage is cut into, was fixed before a job ran. Too few tasks and each one is large and memory-heavy; too many and scheduling overhead dominates. The best value depends on the data, and the runtime already had it.
-- *Problem definition.* Choose a stage's parallelism at runtime from the workload itself, and rewrite the DAG accordingly.
-- *Why it's hard.* Measuring the workload means running part of it first, which costs time. Nemo's existing sampling vertex ran a sample and then the whole stage again, so the sampled data was executed twice. The choice also has to account for scheduling overhead, not just task duration.
+- **Background.** Apache Nemo is a distributed data-processing runtime. It takes a workload from a framework such as Apache Beam, represents it as a DAG of computations and data dependencies, and separates the processing logic from how it is executed, so execution can be optimized at runtime.
+- **Motivation.** Task parallelism, how many pieces a stage is cut into, was fixed before a job ran. With too few tasks, each task became too large and memory-heavy. With too many tasks, scheduling overhead dominated. The best value depends on the data, and the runtime already had that data.
+- **Problem definition.** Choose a stage's parallelism at runtime based on the workload itself, and rewrite the DAG accordingly.
+- **Challenges.** Measuring the workload means running part of it first, which costs time. Nemo's existing sampling vertex ran a sample and then the whole stage again, so the sampled data was executed twice. The choice also has to account for scheduling overhead, not just task duration.
 
-**Action**
+**Actions**
 - Extended task metrics and their collection so sampled tasks report durations back to the driver (PR #289).
 - Introduced a *Splitter* vertex, a new DAG structure that runs the sample and the rest of the stage as one computation, so sampled data is not executed twice and the original dependencies are preserved (PR #292).
-- Built a *Simulation Scheduler* that estimates a stage's completion time by simulating scheduling and dispatch with the sampled durations, and a *Parallelism Prophet* that picks the parallelism from those estimates and rewrites the DAG through a runtime pass (PR #293).
+- Built a *Simulation Scheduler* that estimates a stage's completion time by simulating scheduling and dispatch with the sampled durations.
+- Built a *Parallelism Prophet* that picks the parallelism from those estimates and rewrites the DAG through a runtime pass (PR #293).
 
-**Result**
-- On WordCount over a 247 GB input, job completion time fell by about a quarter against the default parallelism. On inputs of 9–87 GB it was slightly slower, because sampling costs more than it saves there.
+**Results**
+- On WordCount over a 247 GB input, job completion time fell by about a quarter against the previous fixed rule of 4096 partitions. On inputs of 9–87 GB it was slightly slower, because sampling costs more than it saves there.
 - All three pull requests were merged upstream. This work earned a Google Summer of Code 2021 slot on Nemo, and the combined contributions led to committer status on the project.
 
-## Engineering details
+## Engineering Details
 
 ### Why parallelism has a sweet spot
 
@@ -42,7 +46,7 @@ Job completion time against parallelism is U-shaped. On the left, few large task
 
 ### Sampling without running twice
 
-The existing approach was to add a sampling vertex that executed roughly 10% of a stage, analyze it, then run the whole stage again. Simple, but the sampled data was processed twice, and the DAG could not tell which partitions had already been used.
+The existing approach was to add a sampling vertex that executed roughly 10% of a stage, analyzed it, then ran the whole stage again. Simple, but the sampled data was processed twice, and the DAG could not tell which partitions had already been used.
 
 The Splitter vertex wraps the stage as a loop-like structure and unrolls it into two branches from the same edge: an *analyze* branch over the sample and an *optimize* branch over the rest, split by partition key range. The remainder waits for the analysis, then runs with the chosen parallelism. Four sample tasks per candidate parallelism are averaged to reduce variance.
 
@@ -61,7 +65,7 @@ Separately, the fixed 4096-partition rule was replaced by size-based steps of 10
 
 ### Measured
 
-WordCount, default parallelism vs. dynamic task sizing, job completion time:
+WordCount, the previous fixed 4096-partition rule vs. dynamic task resizing, job completion time:
 
 | Input | Change |
 | --- | --- |
@@ -72,4 +76,4 @@ The benefit appears only when the job is large enough for the saved scheduling o
 
 ### What I would do differently
 
-Several thresholds, the partition-size steps and the job-size cut-offs, were hard-coded and should adapt to the cluster. The feedback loop was validated end to end on WordCount but the simulator was never checked in isolation against measured stage durations, which is the check that would tell you whether the Prophet's choice was right for the right reason.
+Several thresholds, such as the partition-size steps and the job-size cutoffs, were hard-coded and should adapt to the cluster. The feedback loop was validated end to end on WordCount but the simulator was never checked in isolation against measured stage durations, which is the check that would show whether the Prophet's choice was right for the right reason.

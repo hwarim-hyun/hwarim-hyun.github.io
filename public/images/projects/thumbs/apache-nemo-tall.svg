@@ -1,0 +1,21 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 1200' width='900' height='1200'>
+<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#f3f2ee'/><stop offset='1' stop-color='#e9e7e1'/></linearGradient></defs>
+<rect width='900' height='1200' fill='url(#g)'/>
+<g transform='translate(63.0 428.0) scale(1.4333)' fill='none' stroke='#1c1c1a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'>
+<circle cx='30' cy='120' r='20' fill='#fff'/>
+<circle cx='130' cy='120' r='20' fill='#fff'/>
+<circle cx='230' cy='120' r='20' fill='#fff'/>
+<line x1='50' y1='120' x2='110' y2='120' />
+<line x1='150' y1='120' x2='210' y2='120' />
+<rect x='212' y='102' width='36' height='36' rx='6' fill='#1f5fbf' stroke='none'/>
+<path d='M248 108 c40 -50 80 -50 120 -50' />
+<circle cx='300' cy='58' r='9' fill='#cfdcf3' stroke='#1f5fbf'/>
+<circle cx='340' cy='58' r='9' fill='#cfdcf3' stroke='#1f5fbf'/>
+<circle cx='380' cy='58' r='9' fill='#cfdcf3' stroke='#1f5fbf'/>
+<path d='M248 132 c40 50 80 50 120 50' />
+<circle cx='300' cy='182' r='16' fill='#fff'/>
+<circle cx='345' cy='182' r='16' fill='#fff'/>
+<circle cx='390' cy='182' r='16' fill='#fff'/>
+<path d='M400 58 c40 0 60 30 80 62 M406 182 c40 0 60 -30 74 -62' />
+<circle cx='500' cy='120' r='20' fill='#fff'/>
+</g></svg>

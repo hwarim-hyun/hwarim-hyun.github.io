@@ -10,7 +10,6 @@ Personal research / engineering portfolio, built with [Astro](https://astro.buil
 | `src/data/publications.json` | 논문 목록 (`selected: true` → 홈에 노출) |
 | `src/data/news.json` | 홈 News 섹션 |
 | `src/content/projects/*.md` | 프로젝트 (front-matter + 본문). `featured: true` → 홈 Featured Projects 에 노출. 기본 정렬은 `date` 최신순, `order: 1` 처럼 주면 그 항목들이 숫자 순으로 맨 앞에 옴. `metrics` 로 임팩트 숫자 표시 |
-| `src/data/highlights.json` | 홈 Highlights 한 줄 목록 |
 | `src/content/blog/*.md` | 노트/블로그 글. `draft: true` 면 빌드에서 제외 |
 | `public/avatar.jpg` | 프로필 사진 |
 | `public/files/cv.pdf` | CV PDF (파일을 넣으면 "Download PDF" 링크가 동작) |

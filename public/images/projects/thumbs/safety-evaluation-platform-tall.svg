@@ -1,0 +1,24 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 1200' width='900' height='1200'>
+<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#f3f2ee'/><stop offset='1' stop-color='#e9e7e1'/></linearGradient></defs>
+<rect width='900' height='1200' fill='url(#g)'/>
+<g transform='translate(63.0 448.0) scale(1.3821)' fill='none' stroke='#1c1c1a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'>
+<rect x='0' y='40' width='110' height='140' rx='14' fill='#fff'/>
+<line x1='24' y1='80' x2='86' y2='80' stroke='#b9b7b0' stroke-width='8'/>
+<line x1='24' y1='112' x2='86' y2='112' stroke='#b9b7b0' stroke-width='8'/>
+<line x1='24' y1='144' x2='86' y2='144' stroke='#b9b7b0' stroke-width='8'/>
+<rect x='150' y='40' width='110' height='140' rx='14' fill='#fff'/>
+<line x1='174' y1='80' x2='236' y2='80' stroke='#b9b7b0' stroke-width='8'/>
+<line x1='174' y1='112' x2='236' y2='112' stroke='#b9b7b0' stroke-width='8'/>
+<line x1='174' y1='144' x2='236' y2='144' stroke='#b9b7b0' stroke-width='8'/>
+<rect x='300' y='40' width='110' height='140' rx='14' fill='#fff'/>
+<line x1='324' y1='80' x2='386' y2='80' stroke='#b9b7b0' stroke-width='8'/>
+<line x1='324' y1='112' x2='386' y2='112' stroke='#b9b7b0' stroke-width='8'/>
+<line x1='324' y1='144' x2='386' y2='144' stroke='#b9b7b0' stroke-width='8'/>
+<line x1='110' y1='110' x2='150' y2='110' />
+<line x1='260' y1='110' x2='300' y2='110' />
+<circle cx='324' cy='80' r='7' fill='#d64545' stroke='none'/>
+<circle cx='324' cy='112' r='7' fill='#d9a441' stroke='none'/>
+<circle cx='324' cy='144' r='7' fill='#3aa561' stroke='none'/>
+<path d='M480 40 l70 26 v60 c0 44 -34 74 -70 90 c-36 -16 -70 -46 -70 -90 v-60 z' fill='#1f5fbf' stroke='#1f5fbf'/>
+<path d='M450 118 l20 20 l40 -44' stroke='#fff' stroke-width='10'/>
+</g></svg>

@@ -117,7 +117,6 @@ main { padding-top: 3rem; padding-bottom: 4rem; }
   .hero-top .avatar { width: 88px; height: 88px; }
 }
 .links { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; margin: 1rem 0 0; padding: 0; list-style: none; font-size: .93rem; }
-.keywords { color: var(--fg-faint); font-size: .85rem; margin-top: .5rem; }
 .skills { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; margin: .75rem 0 0; }
 .pill.pill-accent { color: var(--accent); background: var(--accent-soft); border-color: transparent; font-size: .82rem; padding: .2rem .7rem; }
 .links a { display: inline-flex; align-items: center; gap: .35rem; color: var(--fg-muted); }
@@ -199,15 +198,33 @@ a.pill:hover { border-color: var(--accent); color: var(--accent); text-decoratio
 /* featured projects */
 /* 홈 Featured: 한 줄에 프로젝트 하나 */
 .featured-grid { grid-template-columns: minmax(0, 1fr); }
-.featured-grid .project-card { display: flex; flex-direction: column; }
+/* 홈의 가로 카드: 썸네일이 왼쪽 열 전체를 차지하고 나머지 섹션은 오른쪽 열에 쌓인다 */
+.grid.featured-grid .project-card { display: grid; grid-template-columns: 13rem minmax(0, 1fr); grid-auto-rows: max-content; grid-template-rows: none; column-gap: 1.25rem; }
+.featured-grid .project-card > * { grid-column: 2; }
+/* 썸네일 높이는 오른쪽 글 높이를 따라간다: 이미지를 absolute 로 빼서 행 높이에 영향을 주지 않게 함 */
+.featured-grid .project-card > .card-thumb { grid-column: 1; grid-row: 1 / span 7; align-self: stretch; aspect-ratio: auto; margin: 0; position: relative; min-height: 8rem; }
+.featured-grid .project-card > .card-thumb img, .featured-grid .project-card > .card-thumb-empty span { position: absolute; inset: 0; }
+.featured-grid .project-card > .card-thumb-empty span { display: grid; place-items: center; }
+.featured-grid .project-card:not(:has(.card-thumb)) { grid-template-columns: minmax(0, 1fr); }
+.featured-grid .project-card:not(:has(.card-thumb)) > * { grid-column: 1 / -1; }
+@media (max-width: 640px) {
+  .featured-grid .project-card { grid-template-columns: minmax(0, 1fr); }
+  .featured-grid .project-card > * { grid-column: 1 / -1; }
+  .featured-grid .project-card > .card-thumb { grid-row: 2; aspect-ratio: 16 / 9; min-height: 0; }
+}
 /* 카드 섹션 정렬: 각 카드가 6개 행을 차지하고 subgrid 로 행 높이를 이웃과 공유 */
-.grid .project-card { display: grid; grid-row: span 6; grid-template-rows: subgrid; gap: .45rem; align-content: start; }
+.grid .project-card { display: grid; grid-row: span 7; grid-template-rows: subgrid; gap: .45rem; align-content: start; }
 .grid .project-card .card-more { margin-top: 0; align-self: end; }
 .grid .project-card .metrics, .grid .project-card .meta { align-self: start; align-content: start; margin: 0; }
 
 .project-card { padding: 1.2rem 1.3rem; gap: .5rem; }
 .project-card.large { padding: 1.4rem 1.5rem; }
 .project-card.large h3 { font-size: 1.2rem; }
+/* 카드 썸네일 */
+.card-thumb { display: block; margin: .15rem 0 .35rem; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); background: var(--code-bg); }
+.card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; -webkit-user-drag: none; }
+.card-thumb-empty { display: grid; place-items: center; color: var(--fg-faint); font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; }
+.card-thumb-empty.dev { border-style: dashed; background: transparent; }
 .card-context { margin: 0; font-size: .82rem; color: var(--fg-muted); text-transform: uppercase; letter-spacing: .04em; }
 .card-summary { flex: 0 0 auto; }
 .card-more { margin: auto 0 0; padding-top: .6rem; font-size: .88rem; }
@@ -218,8 +235,6 @@ a.pill:hover { border-color: var(--accent); color: var(--accent); text-decoratio
 .metrics dt { font-size: .78rem; color: var(--fg-faint); }
 .metrics-lg { margin: 1rem 0; gap: .6rem 2.2rem; }
 .metrics-lg dd { font-size: 1.6rem; }
-.highlights { margin: 0; padding-left: 1.2rem; }
-.highlights li { margin: .3rem 0; }
 .pub-list.compact .pub { padding: .65rem 0; }
 .pub-list.compact .title { font-size: .98rem; }
 .article-head .actions { display: flex; flex-wrap: wrap; gap: .4rem; margin: .6rem 0 0; }
@@ -237,6 +252,14 @@ a.pill:hover { border-color: var(--accent); color: var(--accent); text-decoratio
 /* project summary: Problem / Action / Result blocks */
 .prose > p > strong:only-child { display: block; margin-top: 1.1rem; font-size: 1rem; }
 .prose p + ul { margin-top: .3rem; }
+
+/* 프로젝트 상세: 소속 단체 한 줄 소개 (로고 왼쪽, 설명 오른쪽) */
+.org-note { display: flex; flex-direction: column; gap: .8rem; margin: 1.4rem 0 1.8rem; padding: .9rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.org-row { display: flex; align-items: center; gap: .9rem; }
+.org-logo { flex: 0 0 auto; display: grid; grid-template: 100% / 100%; place-items: center; width: 4.5rem; height: 2.4rem; color: var(--fg); }
+.org-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.org-note p { margin: 0; font-size: .9rem; color: var(--fg-muted); line-height: 1.55; }
+.org-note a { color: var(--fg); }
 
 /* Outside of Work: album cards on home, photo grid on album pages */
 .album-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: 1rem; }

@@ -1,0 +1,20 @@
+{
+  "NAVER": {
+    "name": "NAVER",
+    "url": "https://www.navercorp.com/en/main",
+    "logo": "/images/orgs/naver-n.svg",
+    "description": "NAVER is the largest internet service company of Korea, with core business areas including Search, AI, online advertising, commerce, contents, cloud, and fintech. Its total yearly revenue was 8.69 billion USD as of 2025."
+  },
+  "Apache Software Foundation": {
+    "name": "Apache Software Foundation",
+    "url": "https://www.apache.org/",
+    "logo": "/images/orgs/asf.svg",
+    "description": "The Apache Software Foundation is a US non-profit organization that stewards more than 300 open-source projects, including Hadoop, Spark, and Kafka, under the Apache License."
+  },
+  "Google Summer of Code": {
+    "name": "Google Summer of Code",
+    "url": "https://summerofcode.withgoogle.com/",
+    "logo": "/images/orgs/gsoc.svg",
+    "description": "Google Summer of Code is a global online program by Google that brings university students into open-source projects through paid, mentored summer coding projects."
+  }
+}

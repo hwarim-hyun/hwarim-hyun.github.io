@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Icon from '../../components/Icon.astro';
+import OrgNote from '../../components/OrgNote.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -41,6 +42,7 @@ const d = project.data;
         </div>
       )}
     </header>
+    <OrgNote org={d.org} extra={d.orgs} />
     <div class="prose"><Content /></div>
   </article>
 </Base>

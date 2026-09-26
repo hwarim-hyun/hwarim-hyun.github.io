@@ -23,9 +23,9 @@
     "Automated AI Evaluation",
     "Evaluation Infrastructure",
     "Experiment Design",
-    "Red-teaming"
+    "Red-teaming",
+    "Safety Benchmarks"
   ],
-  "keywords": "AI Safety · AI Risk Evaluation · LLM Evaluation · Red-teaming · Evaluation Infrastructure · Model Evaluation · Adversarial Testing · Safety Benchmarks · LLM-as-a-Judge · Guardrail Testing",
   "links": {
     "github": "https://github.com/hwarim-hyun",
     "linkedin": "https://www.linkedin.com/in/hwarim-hyun/",
