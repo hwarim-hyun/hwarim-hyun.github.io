@@ -13,7 +13,7 @@ metrics:
 thumbnail: "/images/projects/thumbs/evaluator-verification.svg"
 thumbnailTall: "/images/projects/thumbs/evaluator-verification-tall.svg"
 featured: true
-order: 2
+order: 3
 ---
 
 ## Summary

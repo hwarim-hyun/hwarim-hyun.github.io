@@ -12,6 +12,7 @@ metrics:
 thumbnail: "/images/projects/thumbs/search-diversify.svg"
 thumbnailTall: "/images/projects/thumbs/search-diversify-tall.svg"
 featured: true
+order: 4
 ---
 
 ## Summary

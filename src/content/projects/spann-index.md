@@ -1,11 +1,11 @@
 ---
 title: "Taming SPANN (SSD-Based Vector Index): Shard Balance and Build Cost"
-summary: "Made a disk-resident vector index production-ready for NAVER's image and video search: defined a quality signal for its clustering, cut shard skew to bring tail latency down, and cut index build time by 80%."
+summary: "Made a disk-resident vector index production-ready for NAVER's image and video search: defined a quality signal for its clustering, cut shard skew to bring tail latency down, and cut centroid training time by 80% and the full index rebuild cycle by 57%."
 date: 2023-06-01
 period: "2022 — 2023"
 org: "NAVER · ANN Platform"
 role: "Software Engineer"
-tags: ["Vector Search", "SPANN", "Indexing", "Spark", "Performance"]
+tags: ["Vector Search", "SPANN", "Indexing", "Spark", "Performance", "Airflow"]
 metrics:
   - { value: "−38%", label: "shard size skew" }
   - { value: "−80%", label: "centroid training time" }
